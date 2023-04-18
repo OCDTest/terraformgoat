@@ -5,7 +5,7 @@ node {
   stage('SonarQube Analysis') {
     def scannerHome = tool 'sonarq';
     withSonarQubeEnv() {
-      sh "/opt/sonar_scanner/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=sonar -Dsonar.sources=."
+      sh "${scannerHome}/bin/sonar-scanner"
     }
   }
 }
